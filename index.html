@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -336,13 +337,6 @@ h1{
   padding:25px;
 }
 
-  border:1px solid var(--line);
-
-  border-radius:var(--radius);
-
-  padding:25px;
-}
-
 .session-card .label{
   font-size:12px;
 
@@ -657,6 +651,45 @@ h2{
 
 
 /* =========================================================
+   STATIC CARD VIDEO
+========================================================= */
+
+.static-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.static-card .card-video{
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  z-index:0;
+}
+
+.static-card .card-video-overlay{
+  position:absolute;
+
+  inset:0;
+
+  background:rgba(0,0,0,.45);
+
+  z-index:1;
+}
+
+.static-card > *:not(.card-video):not(.card-video-overlay){
+  position:relative;
+
+  z-index:2;
+}
+
+
+/* =========================================================
    VIDEOS
 ========================================================= */
 
@@ -700,7 +733,7 @@ h2{
   display:block;
 }
 
-      .video-wrap{
+.video-wrap{
   aspect-ratio:9/16;
 
   background:#050505;
@@ -1267,7 +1300,8 @@ textarea{
 
 }
 
-      /* =========================================================
+
+/* =========================================================
    GROUP PHOTO BACKGROUNDS
 ========================================================= */
 
@@ -1323,6 +1357,7 @@ textarea{
     }
 
 }
+
       
 </style>
 
@@ -1959,7 +1994,22 @@ textarea{
 
       <!-- STATIC -->
 
-      <article class="hierarchy-card">
+      <article class="hierarchy-card static-card">
+
+        <video
+          class="card-video"
+          autoplay
+          muted
+          loop
+          playsinline>
+
+          <source
+            src="images/static.mp4"
+            type="video/mp4">
+
+        </video>
+
+        <div class="card-video-overlay"></div>
 
         <div class="hierarchy-number">
           04
@@ -2010,8 +2060,6 @@ textarea{
 
 
     </div>
-
-
 
     <div class="hierarchy-bottom">
 
@@ -3367,10 +3415,6 @@ document
    STAR RATING
 ========================================================= */
 
-/* =========================================================
-   STAR RATING
-========================================================= */
-
 let rating = 0;
 
 const starsContainer =
@@ -3416,6 +3460,7 @@ stars.forEach(star => {
   });
 
 });
+
 
 /* =========================================================
    FEEDBACK BUTTON
@@ -3537,3 +3582,4 @@ document
 
 </body>
 </html>
+```

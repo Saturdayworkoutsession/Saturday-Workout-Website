@@ -1235,6 +1235,63 @@ textarea{
 
 }
 
+      /* =========================================================
+   GROUP PHOTO BACKGROUNDS
+========================================================= */
+
+.group-photo {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.group-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.60);
+}
+
+.group-photo-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.group-photo-1 {
+    background-image: url("images/1st.jpg");
+}
+
+.group-photo-2 {
+    background-image: url("images/2nd.jpg");
+}
+
+.group-photo-3 {
+    background-image: url("images/3rd.jpg");
+}
+
+.group-photo-4 {
+    background-image: url("images/4th.jpg");
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .group-photo {
+        min-height: 320px;
+        background-attachment: scroll;
+    }
+
+}
+      
 </style>
 
 </head>
@@ -1531,7 +1588,25 @@ textarea{
 
 </section>
 
+<!-- =======================================================
+     GROUP PHOTO 1
+======================================================= -->
 
+<section class="group-photo group-photo-1">
+
+  <div class="group-photo-content">
+
+    <h2>
+      TRAIN TOGETHER
+    </h2>
+
+    <p>
+      Move together. Learn together. Grow together.
+    </p>
+
+  </div>
+
+</section>
 
 <!-- =======================================================
      WHAT WE DO
@@ -1632,7 +1707,25 @@ textarea{
 
 </section>
 
+<!-- =======================================================
+     GROUP PHOTO 2
+======================================================= -->
 
+<section class="group-photo group-photo-2">
+
+  <div class="group-photo-content">
+
+    <h2>
+      BUILD YOUR STRENGTH
+    </h2>
+
+    <p>
+      Strength, movement and skills.
+    </p>
+
+  </div>
+
+</section>
 
 <!-- =======================================================
      CALISTHENICS HIERARCHY
@@ -2046,7 +2139,25 @@ textarea{
 
 </section>
 
+<!-- =======================================================
+     GROUP PHOTO 3
+======================================================= -->
 
+<section class="group-photo group-photo-3">
+
+  <div class="group-photo-content">
+
+    <h2>
+      MOVE • TRAIN • CONNECT
+    </h2>
+
+    <p>
+      Everyone is welcome.
+    </p>
+
+  </div>
+
+</section>
 
 <!-- =======================================================
      SATURDAY SESSION
@@ -2740,7 +2851,25 @@ textarea{
 
 </main>
 
+<!-- =======================================================
+     GROUP PHOTO 4
+======================================================= -->
 
+<section class="group-photo group-photo-4">
+
+  <div class="group-photo-content">
+
+    <h2>
+      EVERY SATURDAY
+    </h2>
+
+    <p>
+      6 AM – 9 AM • Besant Nagar Beach
+    </p>
+
+  </div>
+
+</section>
 
 <!-- =======================================================
      FOOTER

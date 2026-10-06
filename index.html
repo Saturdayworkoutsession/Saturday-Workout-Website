@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-content="Saturday Workout Session — a free calisthenics community in Chennai. Move, learn, connect and master skills together.">
+      content="Saturday Workout Session — a free calisthenics community in Chennai. Move, learn, connect and master skills together.">
 
 <title>Saturday Calisthenics Workout | Chennai</title>
 
+
 <style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
 :root{
   --bg:#0a0a0a;
   --card:#141414;
@@ -22,678 +32,1198 @@ content="Saturday Workout Session — a free calisthenics community in Chennai. 
   --radius:22px;
 }
 
+
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
   box-sizing:border-box;
   margin:0;
-  padding:0
+  padding:0;
 }
 
 html{
-  scroll-behavior:smooth
+  scroll-behavior:smooth;
 }
 
 body{
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
   background:var(--bg);
   color:var(--text);
-  line-height:1.55
+  line-height:1.55;
 }
 
 a{
   color:inherit;
-  text-decoration:none
+  text-decoration:none;
 }
 
 .container{
   width:min(92%,var(--max));
-  margin:auto
+  margin:auto;
 }
 
-/* =========================
+
+/* =========================================================
    NAVIGATION
-========================= */
+========================================================= */
 
 .nav{
   position:sticky;
   top:0;
   z-index:20;
+
   background:rgba(10,10,10,.88);
   backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line)
+
+  border-bottom:1px solid var(--line);
 }
 
 .nav-inner{
   height:72px;
+
   display:flex;
   align-items:center;
-  justify-content:space-between
+  justify-content:space-between;
 }
 
 .logo{
   font-weight:900;
   letter-spacing:-.04em;
-  font-size:20px
+  font-size:20px;
 }
 
 .logo span{
-  color:var(--accent)
+  color:var(--accent);
 }
 
 .nav-links{
   display:flex;
   gap:24px;
+
   font-size:14px;
-  color:#ccc
+  color:#ccc;
 }
 
 .nav-links a:hover{
-  color:var(--accent)
+  color:var(--accent);
 }
 
 .menu{
   display:none;
+
   background:none;
   border:0;
+
   color:white;
-  font-size:26px
+  font-size:26px;
 }
 
-/* =========================
+
+/* =========================================================
    BUTTONS
-========================= */
+========================================================= */
 
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:8px;
+
   padding:13px 20px;
+
   border-radius:999px;
   border:1px solid var(--line);
+
   font-weight:800;
   font-size:14px;
+
   cursor:pointer;
-  transition:.2s
+
+  transition:.2s;
 }
 
 .btn-primary{
   background:var(--accent);
   color:#090909;
-  border-color:var(--accent)
+  border-color:var(--accent);
 }
 
 .btn-primary:hover{
-  transform:translateY(-2px)
+  transform:translateY(-2px);
 }
 
 .btn-dark{
-  background:#151515
+  background:#151515;
 }
 
 .btn-dark:hover{
-  background:#222
+  background:#222;
 }
 
-/* WhatsApp button */
+
+/* =========================================================
+   WHATSAPP BUTTON
+========================================================= */
 
 .btn-whatsapp{
   background:#25D366;
   color:#fff;
-  border-color:#25D366
+  border-color:#25D366;
 }
 
 .btn-whatsapp:hover{
   background:#1ebe5d;
   border-color:#1ebe5d;
-  transform:translateY(-2px)
+  transform:translateY(-2px);
 }
 
-/* =========================
+
+/* =========================================================
+   RESERVE BUTTON
+========================================================= */
+
+.btn-reserve{
+  background:#ffffff;
+  color:#0a0a0a;
+  border-color:#ffffff;
+}
+
+.btn-reserve:hover{
+  background:#eeeeee;
+  border-color:#eeeeee;
+  transform:translateY(-2px);
+}
+
+
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
   padding:92px 0 70px;
+
   position:relative;
-  overflow:hidden
+  overflow:hidden;
 }
 
 .hero:after{
   content:"";
+
   position:absolute;
+
   width:430px;
   height:430px;
+
   border-radius:50%;
+
   background:var(--accent);
   opacity:.07;
+
   filter:blur(80px);
+
   right:-100px;
-  top:30px
+  top:30px;
 }
 
 .eyebrow{
   display:inline-block;
+
   border:1px solid #343434;
   border-radius:999px;
+
   padding:7px 12px;
+
   color:var(--accent);
+
   font-size:12px;
   font-weight:800;
+
   letter-spacing:.08em;
-  text-transform:uppercase
+  text-transform:uppercase;
 }
 
 h1{
   font-size:clamp(48px,8vw,92px);
+
   line-height:.92;
+
   letter-spacing:-.065em;
+
   max-width:900px;
-  margin:22px 0
+
+  margin:22px 0;
 }
 
 .hero p{
   font-size:19px;
+
   color:var(--muted);
-  max-width:650px
+
+  max-width:650px;
 }
 
 .actions{
   display:flex;
+
   gap:12px;
+
   flex-wrap:wrap;
-  margin-top:28px
+
+  margin-top:28px;
 }
 
 .hero-grid{
   display:grid;
+
   grid-template-columns:1.35fr .65fr;
+
   gap:28px;
-  align-items:end
+
+  align-items:end;
 }
 
-/* =========================
+
+/* =========================================================
    SESSION CARD
-========================= */
+========================================================= */
 
 .session-card{
-  background:linear-gradient(145deg,#191919,#101010);
+  background:
+    linear-gradient(
+      145deg,
+      #191919,
+      #101010
+    );
+
   border:1px solid var(--line);
+
   border-radius:var(--radius);
-  padding:25px
+
+  padding:25px;
 }
 
 .session-card .label{
   font-size:12px;
+
   color:var(--muted);
+
   text-transform:uppercase;
-  letter-spacing:.12em
+
+  letter-spacing:.12em;
 }
 
 .session-card h3{
   font-size:28px;
-  margin:9px 0 18px
+
+  margin:9px 0 18px;
 }
 
 .session-row{
   display:flex;
+
   gap:12px;
+
   padding:12px 0;
-  border-top:1px solid var(--line)
+
+  border-top:1px solid var(--line);
 }
 
 .session-row b{
-  min-width:90px
+  min-width:90px;
 }
 
 .session-row span{
-  color:#c5c5c5
+  color:#c5c5c5;
 }
 
-/* =========================
+
+/* =========================================================
    SECTIONS
-========================= */
+========================================================= */
 
 section{
-  padding:78px 0
+  padding:78px 0;
 }
 
 .section-head{
   display:flex;
+
   justify-content:space-between;
+
   gap:25px;
+
   align-items:end;
-  margin-bottom:30px
+
+  margin-bottom:30px;
 }
 
 .kicker{
   color:var(--accent);
+
   font-size:12px;
+
   font-weight:900;
+
   text-transform:uppercase;
-  letter-spacing:.12em
+
+  letter-spacing:.12em;
 }
 
 h2{
   font-size:clamp(34px,5vw,56px);
+
   letter-spacing:-.05em;
-  line-height:1
+
+  line-height:1;
 }
 
 .section-head p{
   max-width:460px;
-  color:var(--muted)
+
+  color:var(--muted);
 }
 
-/* =========================
+
+/* =========================================================
    STATS
-========================= */
+========================================================= */
 
 .stats{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:12px;
 }
 
 .stat{
   padding:25px;
+
   border:1px solid var(--line);
+
   border-radius:18px;
-  background:#101010
+
+  background:#101010;
 }
 
 .stat strong{
   display:block;
+
   font-size:36px;
-  letter-spacing:-.04em
+
+  letter-spacing:-.04em;
 }
 
 .stat span{
   color:var(--muted);
-  font-size:13px
+
+  font-size:13px;
 }
 
-/* =========================
-   CARDS
-========================= */
+
+/* =========================================================
+   GENERAL CARDS
+========================================================= */
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:16px;
 }
 
 .card{
   background:var(--card);
+
   border:1px solid var(--line);
+
   border-radius:var(--radius);
-  padding:26px
+
+  padding:26px;
 }
 
 .card .icon{
   font-size:30px;
-  margin-bottom:18px
+
+  margin-bottom:18px;
 }
 
 .card h3{
   font-size:22px;
-  margin-bottom:8px
+
+  margin-bottom:8px;
 }
 
 .card p{
-  color:var(--muted)
+  color:var(--muted);
 }
 
-/* =========================
+
+/* =========================================================
+   CALISTHENICS HIERARCHY
+========================================================= */
+
+.hierarchy-section{
+  background:#0d0d0d;
+}
+
+.hierarchy-intro{
+  max-width:700px;
+
+  color:var(--muted);
+
+  font-size:16px;
+}
+
+.hierarchy-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:16px;
+}
+
+.hierarchy-card{
+  position:relative;
+
+  background:var(--card);
+
+  border:1px solid var(--line);
+
+  border-radius:var(--radius);
+
+  padding:30px;
+
+  overflow:hidden;
+
+  transition:.25s;
+}
+
+.hierarchy-card:hover{
+  transform:translateY(-4px);
+
+  border-color:#444;
+}
+
+.hierarchy-number{
+  position:absolute;
+
+  right:22px;
+  top:15px;
+
+  font-size:70px;
+
+  font-weight:900;
+
+  line-height:1;
+
+  color:#1d1d1d;
+}
+
+.hierarchy-icon{
+  font-size:38px;
+
+  margin-bottom:20px;
+}
+
+.hierarchy-card h3{
+  font-size:30px;
+
+  letter-spacing:-.04em;
+
+  margin-bottom:8px;
+}
+
+.hierarchy-focus{
+  color:var(--accent);
+
+  font-weight:800;
+
+  font-size:13px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+
+  margin-bottom:15px;
+}
+
+.hierarchy-card p{
+  color:var(--muted);
+
+  margin-bottom:18px;
+
+  max-width:450px;
+}
+
+.example-list{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+}
+
+.example{
+  padding:7px 10px;
+
+  background:#101010;
+
+  border:1px solid #303030;
+
+  border-radius:999px;
+
+  color:#ddd;
+
+  font-size:12px;
+
+  font-weight:700;
+}
+
+.hierarchy-bottom{
+  margin-top:30px;
+
+  padding:25px;
+
+  border:1px solid var(--line);
+
+  border-radius:var(--radius);
+
+  background:#111;
+
+  text-align:center;
+}
+
+.hierarchy-bottom strong{
+  display:block;
+
+  font-size:25px;
+
+  letter-spacing:-.03em;
+
+  margin-bottom:5px;
+}
+
+.hierarchy-bottom span{
+  color:var(--muted);
+
+  font-size:14px;
+}
+
+
+/* =========================================================
+   VIDEOS
+========================================================= */
+
+.video-section{
+  background:#0a0a0a;
+}
+
+.video-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:16px;
+}
+
+.video-card{
+  background:var(--card);
+
+  border:1px solid var(--line);
+
+  border-radius:var(--radius);
+
+  overflow:hidden;
+}
+
+.video-wrap{
+  aspect-ratio:9/16;
+
+  background:#050505;
+
+  overflow:hidden;
+}
+
+.video-wrap video{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+.video-info{
+  padding:18px;
+}
+
+.video-info h3{
+  font-size:20px;
+
+  margin-bottom:6px;
+}
+
+.video-info p{
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+
+/* =========================================================
    SKILLS
-========================= */
+========================================================= */
 
 .skills{
   display:flex;
+
   flex-wrap:wrap;
-  gap:10px
+
+  gap:10px;
 }
 
 .skill{
   padding:10px 14px;
+
   border:1px solid var(--line);
+
   border-radius:999px;
+
   background:#121212;
+
   color:#ddd;
+
   font-weight:700;
-  font-size:13px
+
+  font-size:13px;
 }
 
-/* =========================
+
+/* =========================================================
    EVENT
-========================= */
+========================================================= */
 
 .event{
   display:grid;
-  grid-template-columns:1fr .8fr;
-  gap:18px
+
+  grid-template-columns:
+    1fr .8fr;
+
+  gap:18px;
 }
 
 .event-main{
   background:var(--accent);
+
   color:#0a0a0a;
+
   border-radius:var(--radius);
-  padding:35px
+
+  padding:35px;
 }
 
 .event-main h3{
   font-size:42px;
+
   line-height:1;
+
   letter-spacing:-.04em;
-  margin:8px 0 20px
+
+  margin:8px 0 20px;
 }
 
 .event-main p{
-  max-width:600px
+  max-width:600px;
 }
 
 .event-side{
   background:var(--card);
+
   border:1px solid var(--line);
+
   border-radius:var(--radius);
-  padding:28px
+
+  padding:28px;
 }
 
 .event-side div{
   padding:14px 0;
-  border-bottom:1px solid var(--line)
+
+  border-bottom:1px solid var(--line);
 }
 
 .event-side div:last-child{
-  border:0
+  border:0;
 }
 
 .event-side small{
   display:block;
+
   color:var(--muted);
+
   text-transform:uppercase;
+
   font-size:11px;
-  letter-spacing:.1em
+
+  letter-spacing:.1em;
 }
 
-/* =========================
+
+/* =========================================================
    JOIN
-========================= */
+========================================================= */
 
 .join{
   display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  gap:22px
+
+  grid-template-columns:
+    .85fr 1.15fr;
+
+  gap:22px;
 }
 
 .join-copy{
-  padding:25px
+  padding:25px;
 }
 
 .join-copy p{
   color:var(--muted);
-  margin:18px 0
+
+  margin:18px 0;
 }
 
 .form{
   background:var(--card);
+
   border:1px solid var(--line);
+
   border-radius:var(--radius);
-  padding:28px
+
+  padding:28px;
 }
 
 .form-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:14px;
 }
 
 label{
   font-size:13px;
+
   font-weight:700;
-  color:#ddd
+
+  color:#ddd;
 }
 
 input,
 select,
 textarea{
   width:100%;
+
   margin-top:7px;
+
   background:#0d0d0d;
+
   color:white;
+
   border:1px solid #333;
+
   border-radius:12px;
+
   padding:13px;
+
   font:inherit;
-  outline:none
+
+  outline:none;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
-  border-color:var(--accent)
+  border-color:var(--accent);
 }
 
 textarea{
   min-height:110px;
-  resize:vertical
+
+  resize:vertical;
 }
 
 .full{
-  grid-column:1/-1
+  grid-column:1/-1;
 }
 
 .check-grid{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:9px;
-  margin-top:8px
+
+  margin-top:8px;
 }
 
 .check{
   display:flex;
+
   align-items:center;
+
   gap:7px;
+
   background:#101010;
+
   border:1px solid #303030;
+
   border-radius:999px;
+
   padding:8px 11px;
-  font-size:12px
+
+  font-size:12px;
 }
 
 .check input{
   width:auto;
-  margin:0
+
+  margin:0;
 }
 
 .form-note{
   font-size:11px;
+
   color:#777;
-  margin-top:10px
+
+  margin-top:10px;
 }
 
 .notice{
   display:none;
+
   padding:15px;
+
   border:1px solid #3a3a3a;
+
   background:#101010;
+
   border-radius:12px;
+
   margin-top:15px;
-  color:#d8d8d8
+
+  color:#d8d8d8;
 }
 
 .notice.show{
-  display:block
+  display:block;
 }
 
-/* =========================
+
+/* =========================================================
    FEEDBACK
-========================= */
+========================================================= */
 
 .feedback{
-  background:linear-gradient(135deg,#151515,#0e0e0e);
+  background:
+    linear-gradient(
+      135deg,
+      #151515,
+      #0e0e0e
+    );
+
   border:1px solid var(--line);
+
   border-radius:var(--radius);
+
   padding:34px;
+
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:30px;
 }
 
 .stars{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:8px;
+
+  margin-top:10px;
+  margin-bottom:18px;
+
+  width:max-content;
+
+  color:#555;
+
+  cursor:pointer;
+
+  user-select:none;
+}
+
+.star{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:38px;
+  height:38px;
+
   font-size:34px;
-  letter-spacing:5px;
+  line-height:1;
+
+  color:#555;
+
+  transition:
+    color .15s ease,
+    transform .15s ease;
+}
+
+.star:hover{
+  transform:scale(1.12);
+}
+
+.star.active{
   color:var(--accent);
-  cursor:pointer
 }
 
 .quote{
   font-size:25px;
-  letter-spacing:-.02em
+
+  letter-spacing:-.02em;
 }
 
 .quote small{
   display:block;
+
   color:var(--muted);
+
   font-size:13px;
-  margin-top:12px
+
+  margin-top:12px;
 }
 
-/* =========================
+
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 .footer{
   border-top:1px solid var(--line);
+
   padding:35px 0;
+
   color:#777;
-  font-size:13px
+
+  font-size:13px;
 }
 
 .footer-inner{
   display:flex;
+
   justify-content:space-between;
-  gap:20px
+
+  gap:20px;
 }
 
 .footer strong{
-  color:white
+  color:white;
 }
 
-/* =========================
+
+/* =========================================================
    MODAL
-========================= */
+========================================================= */
 
 .modal{
   position:fixed;
+
   inset:0;
+
   background:rgba(0,0,0,.72);
+
   display:none;
+
   align-items:center;
+
   justify-content:center;
+
   padding:20px;
-  z-index:50
+
+  z-index:50;
 }
 
 .modal.open{
-  display:flex
+  display:flex;
 }
 
 .modal-box{
   background:#151515;
+
   border:1px solid #333;
+
   border-radius:22px;
+
   max-width:520px;
+
   width:100%;
-  padding:30px
+
+  padding:30px;
 }
 
 .modal-head{
   display:flex;
-  justify-content:space-between
+
+  justify-content:space-between;
 }
 
 .close{
   background:none;
+
   border:0;
+
   color:#aaa;
+
   font-size:26px;
-  cursor:pointer
+
+  cursor:pointer;
 }
 
-/* =========================
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:800px){
 
   .nav-links,
   .nav .btn{
-    display:none
+    display:none;
   }
 
   .menu{
-    display:block
+    display:block;
   }
 
   .nav-links.open{
     display:flex;
+
     position:absolute;
+
     top:72px;
+
     left:0;
     right:0;
+
     background:#0d0d0d;
+
     padding:20px;
+
     flex-direction:column;
-    border-bottom:1px solid var(--line)
+
+    border-bottom:1px solid var(--line);
   }
 
   .hero-grid,
   .event,
   .join,
   .feedback{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   .stats{
-    grid-template-columns:1fr 1fr
+    grid-template-columns:
+      1fr 1fr;
   }
 
   .cards{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
+  }
+
+  .hierarchy-grid{
+    grid-template-columns:1fr;
+  }
+
+  .video-grid{
+    grid-template-columns:1fr;
   }
 
   .form-grid{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   .full{
-    grid-column:auto
+    grid-column:auto;
   }
 
   .hero{
-    padding-top:65px
+    padding-top:65px;
   }
 
   .footer-inner{
-    flex-direction:column
+    flex-direction:column;
   }
 
   .event-main h3{
-    font-size:36px
+    font-size:36px;
   }
 
   .actions .btn{
-    width:100%
+    width:100%;
   }
+
 }
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:450px){
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:54px;
+  }
+
+  .hierarchy-card{
+    padding:24px;
+  }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- =========================
+
+<!-- =======================================================
      NAVIGATION
-========================= -->
+======================================================= -->
 
 <nav class="nav">
 
@@ -703,23 +1233,57 @@ textarea{
       SATURDAY <span>WORKOUT</span>
     </a>
 
-    <button class="menu" id="menuBtn" aria-label="Menu">
+
+    <button
+      class="menu"
+      id="menuBtn"
+      aria-label="Menu">
+
       ☰
+
     </button>
 
-    <div class="nav-links" id="navLinks">
-      <a href="#community">Community</a>
-      <a href="#sessions">Sessions</a>
-      <a href="#join">Join</a>
-      <a href="#feedback">Feedback</a>
+
+    <div
+      class="nav-links"
+      id="navLinks">
+
+      <a href="#community">
+        Community
+      </a>
+
+      <a href="#hierarchy">
+        Hierarchy
+      </a>
+
+      <a href="#videos">
+        Videos
+      </a>
+
+      <a href="#sessions">
+        Sessions
+      </a>
+
+      <a href="#join">
+        Join
+      </a>
+
+      <a href="#feedback">
+        Feedback
+      </a>
+
     </div>
 
-    <a class="btn btn-whatsapp"
-       id="navWhatsApp"
-       href="#"
-       target="_blank"
-       rel="noopener">
+
+    <a
+      class="btn btn-whatsapp"
+      id="navWhatsApp"
+      href="#"
+      target="_blank"
+      rel="noopener">
+
       WhatsApp →
+
     </a>
 
   </div>
@@ -727,13 +1291,17 @@ textarea{
 </nav>
 
 
+
 <main>
 
-<!-- =========================
-     HERO
-========================= -->
 
-<section class="hero" id="home">
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section
+  class="hero"
+  id="home">
 
   <div class="container hero-grid">
 
@@ -743,30 +1311,50 @@ textarea{
         Chennai • Free Community
       </span>
 
+
       <h1>
+
         SATURDAY<br>
-        <span style="color:var(--accent)">WORKOUT.</span>
+
+        <span style="color:var(--accent)">
+          WORKOUT.
+        </span>
+
       </h1>
 
+
       <p>
-        A growing calisthenics and movement community where beginners
-        and experienced athletes train together, learn skills and build
-        real connections.
+
+        A growing calisthenics and movement community
+        where beginners and experienced athletes train
+        together, learn skills and build real connections.
+
       </p>
+
 
       <div class="actions">
 
-        <a class="btn btn-primary" href="#join">
+        <a
+          class="btn btn-primary"
+          href="#join">
+
           Join The Movement →
+
         </a>
 
-        <a class="btn btn-dark" href="#sessions">
+
+        <a
+          class="btn btn-dark"
+          href="#sessions">
+
           See Saturday Session
+
         </a>
 
       </div>
 
     </div>
+
 
 
     <div class="session-card">
@@ -775,31 +1363,54 @@ textarea{
         Next Community Session
       </div>
 
+
       <h3>
         Saturday Morning
       </h3>
 
-      <div class="session-row">
-        <b>TIME</b>
-        <span>6:00 AM – 9:00 AM</span>
-      </div>
 
       <div class="session-row">
+
+        <b>TIME</b>
+
+        <span>
+          6:00 AM – 9:00 AM
+        </span>
+
+      </div>
+
+
+      <div class="session-row">
+
         <b>PLACE</b>
+
         <span>
           Besant Nagar Beach<br>
           Next to Free Gym
         </span>
+
       </div>
 
+
       <div class="session-row">
+
         <b>LEVEL</b>
-        <span>Beginner → Advanced</span>
+
+        <span>
+          Beginner → Advanced
+        </span>
+
       </div>
 
+
       <div class="session-row">
+
         <b>COST</b>
-        <span>Free community session</span>
+
+        <span>
+          Free community session
+        </span>
+
       </div>
 
     </div>
@@ -809,9 +1420,10 @@ textarea{
 </section>
 
 
-<!-- =========================
+
+<!-- =======================================================
      COMMUNITY
-========================= -->
+======================================================= -->
 
 <section id="community">
 
@@ -825,6 +1437,7 @@ textarea{
           Growing together
         </div>
 
+
         <h2>
           A community,<br>
           not just a workout.
@@ -832,35 +1445,62 @@ textarea{
 
       </div>
 
+
       <p>
-        Our goal is simple: create a welcoming place where people can
-        learn movement skills, improve strength and meet others who
-        love training.
+
+        Our goal is simple: create a welcoming place
+        where people can learn movement skills, improve
+        strength and meet others who love training.
+
       </p>
 
     </div>
 
 
+
     <div class="stats">
 
       <div class="stat">
+
         <strong>∞</strong>
-        <span>Potential to grow</span>
+
+        <span>
+          Potential to grow
+        </span>
+
       </div>
 
+
       <div class="stat">
+
         <strong>6–9</strong>
-        <span>Saturday training time</span>
+
+        <span>
+          Saturday training time
+        </span>
+
       </div>
 
+
       <div class="stat">
+
         <strong>1</strong>
-        <span>Community session every Saturday</span>
+
+        <span>
+          Community session every Saturday
+        </span>
+
       </div>
 
+
       <div class="stat">
+
         <strong>100%</strong>
-        <span>Open to beginners</span>
+
+        <span>
+          Open to beginners
+        </span>
+
       </div>
 
     </div>
@@ -870,9 +1510,10 @@ textarea{
 </section>
 
 
-<!-- =========================
+
+<!-- =======================================================
      WHAT WE DO
-========================= -->
+======================================================= -->
 
 <section>
 
@@ -886,6 +1527,7 @@ textarea{
           What we do
         </div>
 
+
         <h2>
           Train skills.<br>
           Build strength.
@@ -896,54 +1538,71 @@ textarea{
     </div>
 
 
+
     <div class="cards">
+
 
       <div class="card">
 
-        <div class="icon">🤸</div>
+        <div class="icon">
+          🤸
+        </div>
 
         <h3>
           Calisthenics
         </h3>
 
         <p>
-          Pull-ups, dips, push-ups, muscle-ups and progressive
-          bodyweight strength.
+
+          Pull-ups, dips, push-ups, muscle-ups
+          and progressive bodyweight strength.
+
         </p>
 
       </div>
 
 
+
       <div class="card">
 
-        <div class="icon">🎯</div>
+        <div class="icon">
+          🎯
+        </div>
 
         <h3>
           Skill Training
         </h3>
 
         <p>
-          Handstands, front lever, planche, human flag and other
-          movement skills.
+
+          Handstands, front lever, planche,
+          human flag and other movement skills.
+
         </p>
 
       </div>
 
 
+
       <div class="card">
 
-        <div class="icon">🤝</div>
+        <div class="icon">
+          🤝
+        </div>
 
         <h3>
           Community
         </h3>
 
         <p>
-          Train with people at different levels, exchange knowledge
-          and keep each other motivated.
+
+          Train with people at different levels,
+          exchange knowledge and keep each other motivated.
+
         </p>
 
       </div>
+
 
     </div>
 
@@ -952,13 +1611,450 @@ textarea{
 </section>
 
 
-<!-- =========================
+
+<!-- =======================================================
+     CALISTHENICS HIERARCHY
+======================================================= -->
+
+<section
+  class="hierarchy-section"
+  id="hierarchy">
+
+  <div class="container">
+
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="kicker">
+          Calisthenics Hierarchy
+        </div>
+
+
+        <h2>
+          Four ways<br>
+          to train.
+        </h2>
+
+      </div>
+
+
+      <p class="hierarchy-intro">
+
+        Calisthenics can be trained in different ways.
+        Each style develops a different physical quality —
+        strength, explosiveness, endurance or control.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="hierarchy-grid">
+
+
+      <!-- WEIGHTED -->
+
+      <article class="hierarchy-card">
+
+        <div class="hierarchy-number">
+          01
+        </div>
+
+        <div class="hierarchy-icon">
+          🏋️
+        </div>
+
+        <div class="hierarchy-focus">
+          Maximum Strength
+        </div>
+
+        <h3>
+          Weighted
+        </h3>
+
+        <p>
+
+          Add external resistance to bodyweight
+          movements to develop greater strength
+          and power.
+
+        </p>
+
+
+        <div class="example-list">
+
+          <span class="example">
+            Weighted Pull-up
+          </span>
+
+          <span class="example">
+            Weighted Dip
+          </span>
+
+          <span class="example">
+            Weighted Muscle-up
+          </span>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- DYNAMIC -->
+
+      <article class="hierarchy-card">
+
+        <div class="hierarchy-number">
+          02
+        </div>
+
+        <div class="hierarchy-icon">
+          ⚡
+        </div>
+
+        <div class="hierarchy-focus">
+          Explosiveness & Movement
+        </div>
+
+        <h3>
+          Dynamic
+        </h3>
+
+        <p>
+
+          Fast, explosive and rotational movements
+          that challenge coordination, power and
+          body control.
+
+        </p>
+
+
+        <div class="example-list">
+
+          <span class="example">
+            Muscle-up
+          </span>
+
+          <span class="example">
+            360
+          </span>
+
+          <span class="example">
+            Bar Spins
+          </span>
+
+          <span class="example">
+            Flips
+          </span>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ENDURANCE -->
+
+      <article class="hierarchy-card">
+
+        <div class="hierarchy-number">
+          03
+        </div>
+
+        <div class="hierarchy-icon">
+          🔥
+        </div>
+
+        <div class="hierarchy-focus">
+          Work Capacity
+        </div>
+
+        <h3>
+          Endurance
+        </h3>
+
+        <p>
+
+          High repetitions and longer training
+          efforts designed to build muscular and
+          cardiovascular work capacity.
+
+        </p>
+
+
+        <div class="example-list">
+
+          <span class="example">
+            High-Rep Pull-ups
+          </span>
+
+          <span class="example">
+            Push-ups
+          </span>
+
+          <span class="example">
+            Dips
+          </span>
+
+          <span class="example">
+            Circuits
+          </span>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- STATIC -->
+
+      <article class="hierarchy-card">
+
+        <div class="hierarchy-number">
+          04
+        </div>
+
+        <div class="hierarchy-icon">
+          🗿
+        </div>
+
+        <div class="hierarchy-focus">
+          Isometric Strength
+        </div>
+
+        <h3>
+          Static
+        </h3>
+
+        <p>
+
+          Isometric holds that demand exceptional
+          strength, body control, stability and
+          technique.
+
+        </p>
+
+
+        <div class="example-list">
+
+          <span class="example">
+            Front Lever
+          </span>
+
+          <span class="example">
+            Planche
+          </span>
+
+          <span class="example">
+            Human Flag
+          </span>
+
+          <span class="example">
+            90° Hold
+          </span>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+
+    <div class="hierarchy-bottom">
+
+      <strong>
+        Strength → Power → Endurance → Control
+      </strong>
+
+      <span>
+        Train one. Combine them. Build complete movement ability.
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     VIDEOS
+======================================================= -->
+
+<section
+  class="video-section"
+  id="videos">
+
+  <div class="container">
+
+
+    <div class="section-head">
+
+      <div>
+
+        <div class="kicker">
+          See us in action
+        </div>
+
+
+        <h2>
+          Real sessions.<br>
+          Real movement.
+        </h2>
+
+      </div>
+
+
+      <p>
+
+        A look at the training, skills and community
+        from our Saturday sessions.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="video-grid">
+
+
+      <!-- VIDEO 1 -->
+
+      <article class="video-card">
+
+        <div class="video-wrap">
+
+          <video
+            controls
+            playsinline
+            preload="metadata">
+
+            <source
+              src="videos/session-1.mp4"
+              type="video/mp4">
+
+            Your browser does not support video playback.
+
+          </video>
+
+        </div>
+
+
+        <div class="video-info">
+
+          <h3>
+            Saturday Session
+          </h3>
+
+          <p>
+            Training together and building strength.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- VIDEO 2 -->
+
+      <article class="video-card">
+
+        <div class="video-wrap">
+
+          <video
+            controls
+            playsinline
+            preload="metadata">
+
+            <source
+              src="videos/session-2.mp4"
+              type="video/mp4">
+
+            Your browser does not support video playback.
+
+          </video>
+
+        </div>
+
+
+        <div class="video-info">
+
+          <h3>
+            Skills & Training
+          </h3>
+
+          <p>
+            Working on calisthenics and movement skills.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- VIDEO 3 -->
+
+      <article class="video-card">
+
+        <div class="video-wrap">
+
+          <video
+            controls
+            playsinline
+            preload="metadata">
+
+            <source
+              src="videos/session-3.mp4"
+              type="video/mp4">
+
+            Your browser does not support video playback.
+
+          </video>
+
+        </div>
+
+
+        <div class="video-info">
+
+          <h3>
+            Community
+          </h3>
+
+          <p>
+            Train, learn, connect and have fun together.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
      SATURDAY SESSION
-========================= -->
+======================================================= -->
 
 <section id="sessions">
 
   <div class="container">
+
 
     <div class="section-head">
 
@@ -967,6 +2063,7 @@ textarea{
         <div class="kicker">
           Every Saturday
         </div>
+
 
         <h2>
           Come train with us.
@@ -977,75 +2074,134 @@ textarea{
     </div>
 
 
+
     <div class="event">
+
 
       <div class="event-main">
 
-        <div class="kicker" style="color:#0a0a0a">
+        <div
+          class="kicker"
+          style="color:#0a0a0a">
+
           Open community session
+
         </div>
 
+
         <h3>
+
           Saturday<br>
           6:00 AM — 9:00 AM
+
         </h3>
 
+
         <p>
-          Bring water, a towel and your willingness to learn.
-          Beginners are welcome. We train, practice skills,
-          share knowledge and have fun.
+
+          Bring water, a towel and your willingness
+          to learn. Beginners are welcome.
+
+          We train, practice skills, share knowledge
+          and have fun.
+
         </p>
 
 
         <div class="actions">
 
-          <a class="btn btn-dark" href="#join">
+
+          <a
+            class="btn btn-reserve"
+            href="#join">
+
             Reserve Your Spot →
+
           </a>
 
-          <a class="btn btn-whatsapp"
-             id="sessionWhatsApp"
-             href="#"
-             target="_blank"
-             rel="noopener">
+
+
+          <a
+            class="btn btn-whatsapp"
+            id="sessionWhatsApp"
+            href="#"
+            target="_blank"
+            rel="noopener">
+
             Join WhatsApp Group →
+
           </a>
+
 
         </div>
 
       </div>
 
 
+
       <div class="event-side">
 
+
         <div>
-          <small>Location</small>
-          <b>Besant Nagar Beach</b><br>
+
+          <small>
+            Location
+          </small>
+
+          <b>
+            Besant Nagar Beach
+          </b>
+
+          <br>
+
           <span style="color:#aaa">
             Next to Free Gym
           </span>
+
         </div>
 
+
+
         <div>
-          <small>What to bring</small>
+
+          <small>
+            What to bring
+          </small>
+
           <b>
             Water • Towel • Comfortable clothes
           </b>
+
         </div>
 
+
+
         <div>
-          <small>Training</small>
+
+          <small>
+            Training
+          </small>
+
           <b>
             Strength • Skills • Mobility • Basics
           </b>
+
         </div>
 
+
+
         <div>
-          <small>Community</small>
+
+          <small>
+            Community
+          </small>
+
           <b>
             WhatsApp updates + Saturday meetups
           </b>
+
         </div>
+
 
       </div>
 
@@ -1056,13 +2212,15 @@ textarea{
 </section>
 
 
-<!-- =========================
+
+<!-- =======================================================
      SKILLS
-========================= -->
+======================================================= -->
 
 <section>
 
   <div class="container">
+
 
     <div class="section-head">
 
@@ -1072,9 +2230,12 @@ textarea{
           Skills we explore
         </div>
 
+
         <h2>
+
           Your next skill<br>
           could start here.
+
         </h2>
 
       </div>
@@ -1082,19 +2243,64 @@ textarea{
     </div>
 
 
+
     <div class="skills">
 
-      <span class="skill">Pull-up</span>
-      <span class="skill">Muscle-up</span>
-      <span class="skill">Handstand</span>
-      <span class="skill">Handstand Push-up</span>
-      <span class="skill">Front Lever</span>
-      <span class="skill">Planche</span>
-      <span class="skill">Human Flag</span>
-      <span class="skill">90° Hold</span>
-      <span class="skill">Mobility</span>
-      <span class="skill">Core Strength</span>
-      <span class="skill">Flexibility</span>
+
+      <span class="skill">
+        Pull-up
+      </span>
+
+
+      <span class="skill">
+        Muscle-up
+      </span>
+
+
+      <span class="skill">
+        Handstand
+      </span>
+
+
+      <span class="skill">
+        Handstand Push-up
+      </span>
+
+
+      <span class="skill">
+        Front Lever
+      </span>
+
+
+      <span class="skill">
+        Planche
+      </span>
+
+
+      <span class="skill">
+        Human Flag
+      </span>
+
+
+      <span class="skill">
+        90° Hold
+      </span>
+
+
+      <span class="skill">
+        Mobility
+      </span>
+
+
+      <span class="skill">
+        Core Strength
+      </span>
+
+
+      <span class="skill">
+        Flexibility
+      </span>
+
 
     </div>
 
@@ -1103,13 +2309,15 @@ textarea{
 </section>
 
 
-<!-- =========================
+
+<!-- =======================================================
      JOIN
-========================= -->
+======================================================= -->
 
 <section id="join">
 
   <div class="container join">
+
 
     <div class="join-copy">
 
@@ -1117,78 +2325,122 @@ textarea{
         Become a member
       </div>
 
+
       <h2>
         Join the movement.
       </h2>
 
-      <p>
-        Register once so we know who is part of the community.
-        After registration, you can join the WhatsApp group for
-        Saturday updates and announcements.
-      </p>
 
       <p>
+
+        Register once so we know who is part of
+        the community.
+
+        After registration, you can join the
+        WhatsApp group for Saturday updates
+        and announcements.
+
+      </p>
+
+
+      <p>
+
         <strong>
           What happens next?
         </strong>
+
       </p>
 
+
       <p>
+
         01 — Register<br>
+
         02 — Join WhatsApp<br>
+
         03 — Come Saturday<br>
+
         04 — Train & connect<br>
+
         05 — Give feedback
+
       </p>
 
     </div>
 
 
-    <form class="form" id="joinForm">
+
+    <form
+      class="form"
+      id="joinForm">
+
 
       <div class="form-grid">
 
+
         <label>
+
           Full name
+
           <input
             name="name"
             required
             placeholder="Your name">
+
         </label>
 
 
+
         <label>
+
           WhatsApp number
+
           <input
             name="phone"
             required
             placeholder="+91 XXXXX XXXXX">
+
         </label>
 
 
+
         <label>
+
           Age
+
           <input
             type="number"
             name="age"
             min="10"
             max="100"
             placeholder="Age">
+
         </label>
 
 
+
         <label>
+
           Experience
 
           <select name="level">
 
-            <option>Beginner</option>
-            <option>Intermediate</option>
-            <option>Advanced</option>
+            <option>
+              Beginner
+            </option>
+
+            <option>
+              Intermediate
+            </option>
+
+            <option>
+              Advanced
+            </option>
 
           </select>
 
         </label>
+
 
 
         <div class="full">
@@ -1197,59 +2449,91 @@ textarea{
             Skills you're interested in
           </label>
 
+
           <div class="check-grid">
 
+
             <label class="check">
+
               <input
                 type="checkbox"
                 name="skills"
                 value="Pull-up">
+
               Pull-up
+
             </label>
 
+
+
             <label class="check">
+
               <input
                 type="checkbox"
                 name="skills"
                 value="Muscle-up">
+
               Muscle-up
+
             </label>
 
+
+
             <label class="check">
+
               <input
                 type="checkbox"
                 name="skills"
                 value="Handstand">
+
               Handstand
+
             </label>
 
+
+
             <label class="check">
+
               <input
                 type="checkbox"
                 name="skills"
                 value="Planche">
+
               Planche
+
             </label>
 
+
+
             <label class="check">
+
               <input
                 type="checkbox"
                 name="skills"
                 value="Front Lever">
+
               Front Lever
+
             </label>
 
+
+
             <label class="check">
+
               <input
                 type="checkbox"
                 name="skills"
                 value="Human Flag">
+
               Human Flag
+
             </label>
+
 
           </div>
 
         </div>
+
 
 
         <label class="full">
@@ -1258,15 +2542,30 @@ textarea{
 
           <select name="source">
 
-            <option>Instagram</option>
-            <option>WhatsApp</option>
-            <option>Friend</option>
-            <option>Saturday session</option>
-            <option>Other</option>
+            <option>
+              Instagram
+            </option>
+
+            <option>
+              WhatsApp
+            </option>
+
+            <option>
+              Friend
+            </option>
+
+            <option>
+              Saturday session
+            </option>
+
+            <option>
+              Other
+            </option>
 
           </select>
 
         </label>
+
 
 
         <button
@@ -1277,20 +2576,29 @@ textarea{
 
         </button>
 
+
       </div>
 
 
-      <div class="notice" id="joinNotice">
+
+      <div
+        class="notice"
+        id="joinNotice">
+
 
         <strong>
           Registration captured successfully!
         </strong>
 
+
         <br><br>
+
 
         Continue by joining the WhatsApp group:
 
+
         <br><br>
+
 
         <a
           class="btn btn-whatsapp"
@@ -1303,15 +2611,20 @@ textarea{
 
         </a>
 
+
       </div>
+
 
 
       <div class="form-note">
 
-        Privacy note: collect only information you genuinely need.
+        Privacy note: collect only information
+        you genuinely need.
+
         Avoid publishing member phone numbers publicly.
 
       </div>
+
 
     </form>
 
@@ -1320,13 +2633,15 @@ textarea{
 </section>
 
 
-<!-- =========================
+
+<!-- =======================================================
      FEEDBACK
-========================= -->
+======================================================= -->
 
 <section id="feedback">
 
   <div class="container">
+
 
     <div class="section-head">
 
@@ -1336,28 +2651,41 @@ textarea{
           Help us improve
         </div>
 
+
         <h2>
+
           Your feedback<br>
           shapes the community.
+
         </h2>
 
       </div>
 
+
       <p>
-        After each Saturday session, members can quickly rate
-        the experience and suggest what they want to learn next.
+
+        After each Saturday session, members can
+        quickly rate the experience and suggest
+        what they want to learn next.
+
       </p>
 
     </div>
 
 
+
     <div class="feedback">
+
 
       <div>
 
         <div class="quote">
-          “A strong community grows when everyone gets a voice.”
+
+          “A strong community grows when
+          everyone gets a voice.”
+
         </div>
+
 
         <small>
           Saturday Workout Session
@@ -1366,20 +2694,27 @@ textarea{
       </div>
 
 
+
       <div>
+
 
         <label>
           How was your latest session?
         </label>
 
-        <div
-          class="stars"
-          id="stars"
-          aria-label="Rate session">
 
-          ☆ ☆ ☆ ☆ ☆
+<div
+  class="stars"
+  id="stars"
+  aria-label="Rate session">
 
-        </div>
+  <span class="star" data-rating="1">☆</span>
+  <span class="star" data-rating="2">☆</span>
+  <span class="star" data-rating="3">☆</span>
+  <span class="star" data-rating="4">☆</span>
+  <span class="star" data-rating="5">☆</span>
+
+</div>
 
 
         <button
@@ -1391,7 +2726,9 @@ textarea{
 
         </button>
 
+
       </div>
+
 
     </div>
 
@@ -1399,18 +2736,22 @@ textarea{
 
 </section>
 
+
 </main>
 
 
-<!-- =========================
+
+<!-- =======================================================
      FOOTER
-========================= -->
+======================================================= -->
 
 <footer class="footer">
 
   <div class="container footer-inner">
 
+
     <div>
+
       <strong>
         Saturday Workout Session
       </strong>
@@ -1418,52 +2759,75 @@ textarea{
       <br>
 
       Move. Learn. Connect. Master.
+
     </div>
 
 
+
     <div>
+
       Besant Nagar Beach • Chennai
+
       <br>
+
       Every Saturday • 6:00–9:00 AM
+
     </div>
+
 
 
     <div>
+
       © <span id="year"></span>
+
       Saturday Workout Session
+
     </div>
+
 
   </div>
 
 </footer>
 
 
-<!-- =========================
-     FEEDBACK MODAL
-========================= -->
 
-<div class="modal" id="feedbackModal">
+<!-- =======================================================
+     FEEDBACK MODAL
+======================================================= -->
+
+<div
+  class="modal"
+  id="feedbackModal">
+
 
   <div class="modal-box">
 
+
     <div class="modal-head">
+
 
       <h3>
         Session Feedback
       </h3>
 
+
       <button
         class="close"
         id="closeModal">
+
         ×
+
       </button>
 
+
     </div>
+
 
 
     <form
       id="feedbackForm"
       style="margin-top:20px">
+
 
       <label>
 
@@ -1500,6 +2864,7 @@ textarea{
       </label>
 
 
+
       <label
         style="display:block;margin-top:14px">
 
@@ -1510,6 +2875,7 @@ textarea{
         </textarea>
 
       </label>
+
 
 
       <label
@@ -1524,6 +2890,7 @@ textarea{
       </label>
 
 
+
       <button
         class="btn btn-primary"
         style="margin-top:14px;width:100%"
@@ -1533,6 +2900,7 @@ textarea{
 
       </button>
 
+
     </form>
 
   </div>
@@ -1540,45 +2908,48 @@ textarea{
 </div>
 
 
+
 <script>
+
 
 /* =========================================================
    IMPORTANT SETTINGS
 ========================================================= */
 
 
-/* YOUR WHATSAPP GROUP */
+/*
+   YOUR WHATSAPP GROUP LINK
+*/
 
 const WHATSAPP_GROUP_URL =
 "https://chat.whatsapp.com/EXxoJ0g2iVxK8YV56CU6Si";
 
 
-/* =========================================================
-   GOOGLE APPS SCRIPT WEB APP URL
-=========================================================
+/*
+   YOUR GOOGLE APPS SCRIPT WEB APP URL
 
-   IMPORTANT:
-
-   Replace the URL below with the Web App URL
-   you receive after deploying Google Apps Script.
-
-   It MUST normally end with /exec
-
-========================================================= */
+   Replace YOUR_SCRIPT_ID with your
+   actual working Apps Script URL.
+*/
 
 const GOOGLE_SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbyztUylEwd5PnY29hKXoUIOHMdnqa64CreLRGtevnbQiWo2WiKN2vZ08KbxOQ0NkkBb/exec";
 
 
+/*
+   YOUR GOOGLE FEEDBACK FORM URL
+
+   Example:
+
+   https://docs.google.com/forms/d/e/XXXXXXXX/viewform
+
+*/
+
+const FEEDBACK_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfa22WuLdiZs_XhvRsHuUC4aE9RBU2CLpYRfn4J51hxqKOcgA/viewform?usp=header";
+
+
 /* =========================================================
-   OPTIONAL GOOGLE FORM
-========================================================= */
-
-const FEEDBACK_FORM_URL = "";
-
-
-/* =========================================================
-   SET CURRENT YEAR
+   CURRENT YEAR
 ========================================================= */
 
 document.getElementById("year").textContent =
@@ -1586,7 +2957,7 @@ new Date().getFullYear();
 
 
 /* =========================================================
-   SET WHATSAPP LINKS.
+   WHATSAPP LINKS
 ========================================================= */
 
 document.getElementById("navWhatsApp").href =
@@ -1609,21 +2980,25 @@ document.getElementById("menuBtn");
 const navLinks =
 document.getElementById("navLinks");
 
+
 menuBtn.addEventListener("click", () => {
 
   navLinks.classList.toggle("open");
 
 });
 
-navLinks.querySelectorAll("a").forEach(a => {
 
-  a.addEventListener("click", () => {
+navLinks
+  .querySelectorAll("a")
+  .forEach(a => {
 
-    navLinks.classList.remove("open");
+    a.addEventListener("click", () => {
+
+      navLinks.classList.remove("open");
+
+    });
 
   });
-
-});
 
 
 /* =========================================================
@@ -1632,193 +3007,203 @@ navLinks.querySelectorAll("a").forEach(a => {
 ========================================================= */
 
 document
-.getElementById("joinForm")
-.addEventListener("submit", async (e) => {
+  .getElementById("joinForm")
+  .addEventListener(
+    "submit",
+    async (e) => {
 
-  e.preventDefault();
-
-
-  const form = e.target;
-
-  const submitButton =
-    form.querySelector(
-      'button[type="submit"]'
-    );
-
-  const notice =
-    document.getElementById("joinNotice");
+      e.preventDefault();
 
 
-  /* -----------------------------------------
-     CHECK GOOGLE SCRIPT URL
-  ----------------------------------------- */
-
-  if (
-    !GOOGLE_SCRIPT_URL ||
-    GOOGLE_SCRIPT_URL.includes(
-      "YOUR_SCRIPT_ID"
-    )
-  ) {
-
-    alert(
-      "Google Sheets is not connected yet. Please add your Google Apps Script Web App URL."
-    );
-
-    return;
-
-  }
+      const form = e.target;
 
 
-  /* -----------------------------------------
-     GET SELECTED SKILLS
-  ----------------------------------------- */
-
-  const selectedSkills =
-    Array.from(
-      document.querySelectorAll(
-        'input[name="skills"]:checked'
-      )
-    )
-    .map(input => input.value)
-    .join(", ");
-
-
-  /* -----------------------------------------
-     COLLECT FORM DATA
-  ----------------------------------------- */
-
-  const registrationData = {
-
-    name:
-      form.querySelector(
-        '[name="name"]'
-      ).value.trim(),
-
-    phone:
-      form.querySelector(
-        '[name="phone"]'
-      ).value.trim(),
-
-    age:
-      form.querySelector(
-        '[name="age"]'
-      ).value.trim(),
-
-    level:
-      form.querySelector(
-        '[name="level"]'
-      ).value,
-
-    skills:
-      selectedSkills,
-
-    source:
-      form.querySelector(
-        '[name="source"]'
-      ).value
-
-  };
-
-
-  /* -----------------------------------------
-     DISABLE BUTTON
-  ----------------------------------------- */
-
-  submitButton.disabled = true;
-
-  submitButton.textContent =
-    "Registering...";
-
-
-  try {
-
-    /* -----------------------------------------
-       SEND DATA TO GOOGLE APPS SCRIPT
-    ----------------------------------------- */
-
-    await fetch(
-      GOOGLE_SCRIPT_URL,
-      {
-        method:"POST",
-
-        mode:"no-cors",
-
-        headers:{
-          "Content-Type":
-          "text/plain;charset=utf-8"
-        },
-
-        body:
-          JSON.stringify(
-            registrationData
-          )
-      }
-    );
-
-
-    /* -----------------------------------------
-       SHOW SUCCESS MESSAGE
-    ----------------------------------------- */
-
-    notice.classList.add("show");
-
-
-    submitButton.textContent =
-      "Registration Complete ✓";
-
-
-    /* -----------------------------------------
-       RESET FORM
-    ----------------------------------------- */
-
-    form.reset();
-
-
-    /* -----------------------------------------
-       OPEN WHATSAPP
-    ----------------------------------------- */
-
-    setTimeout(() => {
-
-      if (
-        WHATSAPP_GROUP_URL &&
-        !WHATSAPP_GROUP_URL.includes(
-          "YOUR-GROUP-LINK"
-        )
-      ) {
-
-        window.open(
-          WHATSAPP_GROUP_URL,
-          "_blank"
+      const submitButton =
+        form.querySelector(
+          'button[type="submit"]'
         );
 
+
+      const notice =
+        document.getElementById(
+          "joinNotice"
+        );
+
+
+      if (
+        !GOOGLE_SCRIPT_URL ||
+        GOOGLE_SCRIPT_URL.includes(
+          "YOUR_SCRIPT_ID"
+        )
+      ){
+
+        alert(
+          "Google Sheets is not connected yet. Please add your Google Apps Script Web App URL."
+        );
+
+        return;
+
       }
 
-    }, 700);
+
+      const selectedSkills =
+        Array.from(
+          document.querySelectorAll(
+            'input[name="skills"]:checked'
+          )
+        )
+        .map(
+          input => input.value
+        )
+        .join(", ");
 
 
-  } catch(error) {
+      const registrationData = {
 
-    console.error(
-      "Registration error:",
-      error
-    );
-
-
-    alert(
-      "Something went wrong while registering. Please try again."
-    );
+        name:
+          form
+            .querySelector(
+              '[name="name"]'
+            )
+            .value
+            .trim(),
 
 
-    submitButton.disabled = false;
+        phone:
+          form
+            .querySelector(
+              '[name="phone"]'
+            )
+            .value
+            .trim(),
 
-    submitButton.textContent =
-      "Register & Continue →";
 
-  }
+        age:
+          form
+            .querySelector(
+              '[name="age"]'
+            )
+            .value
+            .trim(),
 
-});
 
+        level:
+          form
+            .querySelector(
+              '[name="level"]'
+            )
+            .value,
+
+
+        skills:
+          selectedSkills,
+
+
+        source:
+          form
+            .querySelector(
+              '[name="source"]'
+            )
+            .value
+
+      };
+
+
+      submitButton.disabled = true;
+
+
+      submitButton.textContent =
+        "Registering...";
+
+
+      try {
+
+
+        await fetch(
+          GOOGLE_SCRIPT_URL,
+          {
+
+            method:"POST",
+
+            mode:"no-cors",
+
+            headers:{
+              "Content-Type":
+                "text/plain;charset=utf-8"
+            },
+
+            body:
+              JSON.stringify(
+                registrationData
+              )
+
+          }
+        );
+
+
+        notice.classList.add(
+          "show"
+        );
+
+
+        submitButton.textContent =
+          "Registration Complete ✓";
+
+
+        form.reset();
+
+
+        setTimeout(() => {
+
+
+          if (
+            WHATSAPP_GROUP_URL &&
+            !WHATSAPP_GROUP_URL.includes(
+              "YOUR-GROUP-LINK"
+            )
+          ){
+
+            window.open(
+              WHATSAPP_GROUP_URL,
+              "_blank"
+            );
+
+          }
+
+        },700);
+
+
+      } catch(error){
+
+
+        console.error(
+          "Registration error:",
+          error
+        );
+
+
+        alert(
+          "Something went wrong while registering. Please try again."
+        );
+
+
+        submitButton.disabled =
+          false;
+
+
+        submitButton.textContent =
+          "Register & Continue →";
+
+
+      }
+
+    }
+  );
+
+
+/* =========================================================
+   STAR RATING
+========================================================= */
 
 /* =========================================================
    STAR RATING
@@ -1826,57 +3211,81 @@ document
 
 let rating = 0;
 
-document
-.getElementById("stars")
-.addEventListener("click", (e) => {
+const starsContainer =
+  document.getElementById("stars");
 
-  const rect =
-    e.currentTarget.getBoundingClientRect();
-
-  rating =
-    Math.max(
-      1,
-      Math.min(
-        5,
-        Math.ceil(
-          (e.clientX - rect.left) /
-          (rect.width / 5)
-        )
-      )
-    );
+const stars =
+  starsContainer.querySelectorAll(".star");
 
 
-  e.currentTarget.textContent =
-    "★ ".repeat(rating) +
-    "☆ ".repeat(5 - rating);
+function updateStars(selectedRating){
+
+  stars.forEach(star => {
+
+    const starRating =
+      Number(star.dataset.rating);
+
+    if(starRating <= selectedRating){
+
+      star.textContent = "★";
+      star.classList.add("active");
+
+    }else{
+
+      star.textContent = "☆";
+      star.classList.remove("active");
+
+    }
+
+  });
+
+}
+
+
+stars.forEach(star => {
+
+  star.addEventListener("click", () => {
+
+    rating =
+      Number(star.dataset.rating);
+
+    updateStars(rating);
+
+  });
 
 });
-
 
 /* =========================================================
    FEEDBACK BUTTON
 ========================================================= */
 
 document
-.getElementById("feedbackBtn")
-.addEventListener("click", () => {
+  .getElementById("feedbackBtn")
+  .addEventListener(
+    "click",
+    () => {
 
-  if (FEEDBACK_FORM_URL) {
 
-    window.open(
-      FEEDBACK_FORM_URL,
-      "_blank"
-    );
+      if(FEEDBACK_FORM_URL){
 
-  } else {
+        window.open(
+          FEEDBACK_FORM_URL,
+          "_blank"
+        );
 
-    document
-      .getElementById("feedbackModal")
-      .classList.add("open");
+      }else{
 
-  }
+        document
+          .getElementById(
+            "feedbackModal"
+          )
+          .classList
+          .add("open");
 
-});
+      }
+
+    }
+  );
 
 
 /* =========================================================
@@ -1884,60 +3293,85 @@ document
 ========================================================= */
 
 document
-.getElementById("closeModal")
-.addEventListener("click", () => {
-
-  document
-    .getElementById("feedbackModal")
-    .classList.remove("open");
-
-});
+  .getElementById("closeModal")
+  .addEventListener(
+    "click",
+    () => {
 
 
-/* =========================================================
-   CLOSE MODAL WHEN CLICKING OUTSIDE
-========================================================= */
+      document
+        .getElementById(
+          "feedbackModal"
+        )
+        .classList
+        .remove("open");
 
-document
-.getElementById("feedbackModal")
-.addEventListener("click", (e) => {
-
-  if (
-    e.target.id === "feedbackModal"
-  ) {
-
-    e.currentTarget.classList.remove(
-      "open"
-    );
-
-  }
-
-});
-
-
-/* =========================================================
-   FEEDBACK FORM
-========================================================= */
-
-document
-.getElementById("feedbackForm")
-.addEventListener("submit", (e) => {
-
-  e.preventDefault();
-
-  alert(
-    "Thank you! Connect this form to Google Forms or a database before publishing to save responses."
+    }
   );
 
-  e.target.reset();
 
-  document
-    .getElementById("feedbackModal")
-    .classList.remove("open");
+/* =========================================================
+   CLOSE MODAL OUTSIDE
+========================================================= */
 
-});
+document
+  .getElementById("feedbackModal")
+  .addEventListener(
+    "click",
+    (e) => {
+
+
+      if(
+        e.target.id ===
+        "feedbackModal"
+      ){
+
+        e.currentTarget
+          .classList
+          .remove("open");
+
+      }
+
+    }
+  );
+
+
+/* =========================================================
+   TEMPORARY FEEDBACK MODAL
+========================================================= */
+
+document
+  .getElementById("feedbackForm")
+  .addEventListener(
+    "submit",
+    (e) => {
+
+
+      e.preventDefault();
+
+
+      alert(
+        "Thank you! Your feedback has been received."
+      );
+
+
+      e.target.reset();
+
+
+      document
+        .getElementById(
+          "feedbackModal"
+        )
+        .classList
+        .remove("open");
+
+    }
+  );
+
 
 </script>
 
+
 </body>
+
 </html>

@@ -659,13 +659,35 @@ h2{
   overflow:hidden;
 }
 
-.video-wrap video{
+.video-wrap iframe{
   width:100%;
   height:100%;
 
-  object-fit:cover;
+  border:0;
 
   display:block;
+}
+
+      .video-wrap{
+  aspect-ratio:9/16;
+
+  background:#050505;
+
+  overflow:hidden;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+}
+
+.video-wrap .instagram-media{
+  margin:0 !important;
+
+  width:100% !important;
+
+  min-width:0 !important;
 }
 
 .video-info{
@@ -1930,22 +1952,15 @@ textarea{
 
       <article class="video-card">
 
-        <div class="video-wrap">
+<div class="video-wrap">
 
-          <video
-            controls
-            playsinline
-            preload="metadata">
+  <blockquote
+    class="instagram-media"
+    data-instgrm-permalink="https://www.instagram.com/reel/Dd8CSWEzTd3/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+    data-instgrm-version="14">
+  </blockquote>
 
-            <source
-              src="videos/session-1.mp4"
-              type="video/mp4">
-
-            Your browser does not support video playback.
-
-          </video>
-
-        </div>
+</div>
 
 
         <div class="video-info">
@@ -1968,22 +1983,15 @@ textarea{
 
       <article class="video-card">
 
-        <div class="video-wrap">
+<div class="video-wrap">
 
-          <video
-            controls
-            playsinline
-            preload="metadata">
+  <blockquote
+    class="instagram-media"
+    data-instgrm-permalink="https://www.instagram.com/reel/Ddstg52zE90/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+    data-instgrm-version="14">
+  </blockquote>
 
-            <source
-              src="videos/session-2.mp4"
-              type="video/mp4">
-
-            Your browser does not support video playback.
-
-          </video>
-
-        </div>
+</div>
 
 
         <div class="video-info">
@@ -2006,22 +2014,15 @@ textarea{
 
       <article class="video-card">
 
-        <div class="video-wrap">
+<div class="video-wrap">
 
-          <video
-            controls
-            playsinline
-            preload="metadata">
+  <blockquote
+    class="instagram-media"
+    data-instgrm-permalink="https://www.instagram.com/reel/Dc6YE1rz04P/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+    data-instgrm-version="14">
+  </blockquote>
 
-            <source
-              src="videos/session-3.mp4"
-              type="video/mp4">
-
-            Your browser does not support video playback.
-
-          </video>
-
-        </div>
+</div>
 
 
         <div class="video-info">
@@ -3371,7 +3372,7 @@ document
 
 </script>
 
+<script async src="https://www.instagram.com/embed.js"></script>
 
 </body>
-
 </html>

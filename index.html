@@ -538,6 +538,55 @@ h2{
   transition:.25s;
 }
 
+
+/* =========================================================
+   STATIC CARD VIDEO
+========================================================= */
+
+.static-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.static-card .card-video{
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  z-index:0;
+}
+
+.static-card .card-video-overlay{
+  position:absolute;
+
+  inset:0;
+
+  background:rgba(0,0,0,.45);
+
+  z-index:1;
+}
+
+.static-card > *:not(.card-video):not(.card-video-overlay):not(.hierarchy-number){
+  position:relative;
+
+  z-index:2;
+}
+
+.static-card .hierarchy-number{
+  position:absolute;
+
+  right:22px;
+  top:15px;
+
+  z-index:2;
+}
+
+
 .hierarchy-card:hover{
   transform:translateY(-4px);
 
@@ -649,45 +698,6 @@ h2{
   color:var(--muted);
 
   font-size:14px;
-}
-
-
-/* =========================================================
-   STATIC CARD VIDEO
-========================================================= */
-
-.static-card{
-  position:relative;
-  overflow:hidden;
-}
-
-.static-card .card-video{
-  position:absolute;
-
-  inset:0;
-
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  z-index:0;
-}
-
-.static-card .card-video-overlay{
-  position:absolute;
-
-  inset:0;
-
-  background:rgba(0,0,0,.45);
-
-  z-index:1;
-}
-
-.static-card > *:not(.card-video):not(.card-video-overlay){
-  position:relative;
-
-  z-index:2;
 }
 
 

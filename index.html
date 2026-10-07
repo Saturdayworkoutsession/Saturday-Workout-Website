@@ -542,12 +542,18 @@ h2{
    STATIC CARD VIDEO
 ========================================================= */
 
-.static-card{
+.static-card,
+.weighted-card,
+.dynamic-card,
+.endurance-card{
   position:relative;
   overflow:hidden;
 }
 
-.static-card .card-video{
+.static-card .card-video,
+.weighted-card .card-video,
+.dynamic-card .card-video,
+.endurance-card .card-video{
   position:absolute;
 
   inset:0;
@@ -560,7 +566,10 @@ h2{
   z-index:0;
 }
 
-.static-card .card-video-overlay{
+.static-card .card-video-overlay,
+.weighted-card .card-video-overlay,
+.dynamic-card .card-video-overlay,
+.endurance-card .card-video-overlay{
   position:absolute;
 
   inset:0;
@@ -570,13 +579,19 @@ h2{
   z-index:1;
 }
 
-.static-card > *:not(.card-video):not(.card-video-overlay):not(.hierarchy-number){
+.static-card > *:not(.card-video):not(.card-video-overlay):not(.hierarchy-number),
+.weighted-card > *:not(.card-video):not(.card-video-overlay):not(.hierarchy-number),
+.dynamic-card > *:not(.card-video):not(.card-video-overlay):not(.hierarchy-number),
+.endurance-card > *:not(.card-video):not(.card-video-overlay):not(.hierarchy-number){
   position:relative;
 
   z-index:2;
 }
 
-.static-card .hierarchy-number{
+.static-card .hierarchy-number,
+.weighted-card .hierarchy-number,
+.dynamic-card .hierarchy-number,
+.endurance-card .hierarchy-number{
   position:absolute;
 
   right:22px;
@@ -1855,7 +1870,22 @@ textarea{
 
       <!-- WEIGHTED -->
 
-      <article class="hierarchy-card">
+      <article class="hierarchy-card weighted-card">
+
+        <video
+          class="card-video"
+          autoplay
+          muted
+          loop
+          playsinline>
+
+          <source
+            src="images/weighted.mp4"
+            type="video/mp4">
+
+        </video>
+
+        <div class="card-video-overlay"></div>
 
         <div class="hierarchy-number">
           01
@@ -1904,7 +1934,22 @@ textarea{
 
       <!-- DYNAMIC -->
 
-      <article class="hierarchy-card">
+      <article class="hierarchy-card dynamic-card">
+
+        <video
+          class="card-video"
+          autoplay
+          muted
+          loop
+          playsinline>
+
+          <source
+            src="images/dynamic.mp4"
+            type="video/mp4">
+
+        </video>
+
+        <div class="card-video-overlay"></div>
 
         <div class="hierarchy-number">
           02
@@ -1957,7 +2002,22 @@ textarea{
 
       <!-- ENDURANCE -->
 
-      <article class="hierarchy-card">
+      <article class="hierarchy-card endurance-card">
+
+        <video
+          class="card-video"
+          autoplay
+          muted
+          loop
+          playsinline>
+
+          <source
+            src="images/endurance.mp4"
+            type="video/mp4">
+
+        </video>
+
+        <div class="card-video-overlay"></div>
 
         <div class="hierarchy-number">
           03

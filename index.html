@@ -514,27 +514,27 @@ h2{
 
 .hierarchy-grid{
   display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
+  grid-template-columns:repeat(4, 1fr);
   gap:16px;
 }
 
 .hierarchy-card{
   position:relative;
+  display:flex;
+  flex-direction:column;
+  aspect-ratio:3 / 4; /* portrait shape */
+  min-height:420px;
 
   background:var(--card);
-
   border:1px solid var(--line);
-
   border-radius:var(--radius);
-
   padding:30px;
-
   overflow:hidden;
-
   transition:.25s;
+}
+
+.hierarchy-card .example-list{
+  margin-top:auto; /* keeps exercise labels near the bottom */
 }
 
 
@@ -1256,9 +1256,14 @@ textarea{
     grid-template-columns:1fr;
   }
 
-  .hierarchy-grid{
-    grid-template-columns:1fr;
-  }
+.hierarchy-grid{
+  grid-template-columns:1fr;
+}
+
+.hierarchy-card{
+  aspect-ratio:auto;
+  min-height:360px;
+}
 
   .video-grid{
     grid-template-columns:1fr;
